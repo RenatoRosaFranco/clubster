@@ -10,7 +10,13 @@ RSpec.describe Club, type: :model do
       expect(subject).to respond_to :user
     end
     it 'belongs to user' do
-      expect(subject).to belongTo :user
+      expect(subject).to belong_to :user
+    end
+    it 'have many meetings' do
+      expect(subject).to have_many :meetings
+    end
+    it 'have many events ' do
+      expect(subject).to have_many :events
     end
   end
 end
