@@ -1,0 +1,60 @@
+<% provide :title, "Home" %>
+
+<div class="jumbotron" id='presenter'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class='col-md-offset-1'>
+         <ul class='list-unstyled'>
+            <li><h1>Clubster</h1></li>
+            <li><p>Encontre a sua galera com poucos cliques.</p></li>
+            <ul class='list-unstyled list-inline'>
+               <li><%= link_to 'Saiba mais', '', class: 'bt btn-default btn-lg top' %></li>
+               <li><%= link_to 'Criar uma conta', '', class: 'bt btn-primary btn-lg top' %></li>
+            </ul>
+         </ul>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class='breadcrumb'>
+         <li><%= link_to 'Home', root_path %></li>
+      </ul>
+
+      <div class="row">
+        <div class="col-md-8">
+           <ul class='list-unstyled'>
+             <li><h3><i class='glyphicon glyphicon-search'></i> ULTIMOS CLUBES</h3></li>
+             <li><p>conheça os clubes que estão acabando de emergir.</p></li>
+             <li><hr></li>
+
+             <% Club.all.limit(6).each do |club| %>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class='jumbotron thumb'></div>
+                  <ul class='list-unstyled padding' style='margin-top: -30px;'>
+                     <li><h4><%= link_to club.name, club_path(club) %></h4></li>
+                     <li><p><%= truncate(club.description, length: 40) %></p></li>
+                  </ul>
+                </div>
+              </div>
+             <% end %>
+
+             <div class='col-md-12 text-center'>
+                <%= link_to 'VER MAIS', clubs_path,
+                 class: 'btn btn-primary btn-lg top see-more' %>
+             </div>
+
+           </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
