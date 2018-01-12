@@ -48,6 +48,12 @@ group :development, :test do
   gem 'responders'
   gem 'carrierwave'
 
+  # Test Suit
+  gem 'shoulda'
+  gem 'cucumber'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+
   # Code Coverage, Quality, prof
   gem 'rubocop'
   gem 'rails_best_practices'
