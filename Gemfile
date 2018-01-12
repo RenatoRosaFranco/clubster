@@ -47,6 +47,12 @@ group :development, :test do
   gem 'bootstrap-will_paginate'
   gem 'responders'
   gem 'carrierwave'
+
+  # Code Coverage, Quality, prof
+  gem 'rubocop'
+  gem 'rails_best_practices'
+  gem 'simplecov'
+  gem 'benchmark-ips'
 end
 
 group :development do
