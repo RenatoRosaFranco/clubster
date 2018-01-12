@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112115852) do
+ActiveRecord::Schema.define(version: 20180112121318) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,42 @@ ActiveRecord::Schema.define(version: 20180112115852) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_clubs_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.date "date"
+    t.string "slig"
+    t.string "tags"
+    t.integer "club_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_events_on_club_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer "club_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_members_on_club_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
+  create_table "mettings", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "slug"
+    t.string "tags"
+    t.integer "user_id"
+    t.integer "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_mettings_on_club_id"
+    t.index ["user_id"], name: "index_mettings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -37,27 +37,46 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+
+  # App Suit
+  # Use capybara as system test
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # Use rspec-rails as test framework
   gem 'rspec-rails'
+  # Use devise as authentication
   gem 'devise'
+  # Use bootstrap-sass
   gem 'bootstrap-sass'
+  # Use jquery-rails as jquery
   gem 'jquery-rails'
+  # Use will_paginate as pagination
   gem 'will_paginate'
+  # Use bootstrap-will_paginate as paginate bootstrap style
   gem 'bootstrap-will_paginate'
+  # Use responders to respond formats
   gem 'responders'
+  # User carreriwave as file uploader
   gem 'carrierwave'
 
   # Test Suit
+  # Use shoulda to make code more easy to read
   gem 'shoulda'
+  # Use cucumber as framework test
   gem 'cucumber'
+  # Use pry-rails as pry console
   gem 'pry-rails'
+  # Use pru-byebug as code debug
   gem 'pry-byebug'
 
   # Code Coverage, Quality, prof
+  # Use rubocop as codequality
   gem 'rubocop'
+  # use rails-best_practices as best practices
   gem 'rails_best_practices'
+  # use simplecov as code coverage
   gem 'simplecov'
+  # use benchmark-ips to profile code
   gem 'benchmark-ips'
 end
 
